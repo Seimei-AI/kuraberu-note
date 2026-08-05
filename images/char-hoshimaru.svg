@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="ホシまる（星のキャラクター）">
+  <polygon points="60,20 73.5,47.4 103.7,51.8 81.9,73.1 87,103.2 60,89 33,103.2 38.1,73.1 16.3,51.8 46.5,47.4"
+    fill="#FFD54F" stroke="#F0A800" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="52" cy="60" r="3.6" fill="#5b4300"/>
+  <circle cx="68" cy="60" r="3.6" fill="#5b4300"/>
+  <path d="M51 68 Q60 76 69 68" fill="none" stroke="#5b4300" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="44" cy="66" rx="4.5" ry="3" fill="#ffb0a0" opacity="0.7"/>
+  <ellipse cx="76" cy="66" rx="4.5" ry="3" fill="#ffb0a0" opacity="0.7"/>
+</svg>

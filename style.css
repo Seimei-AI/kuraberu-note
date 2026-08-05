@@ -25,8 +25,8 @@ body {
 }
 
 .site-header {
-  background: var(--card);
-  border-bottom: 2px solid var(--line);
+  background: linear-gradient(135deg, #fffdf5 0%, #fdf6e0 60%, #eaf6f2 100%);
+  border-bottom: 3px solid #f5c542;
   padding: 14px 16px;
 }
 .site-header .inner {
@@ -200,7 +200,76 @@ th {
 }
 .site-footer nav a { margin-right: 14px; }
 
+/* キャラクター吹き出し */
+.char-bubble {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 1.5em 0;
+}
+.char-bubble img {
+  width: 64px;
+  height: 64px;
+  flex: none;
+}
+.char-bubble .char-name {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 2px;
+}
+.char-bubble .bubble {
+  position: relative;
+  border: 2px solid;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  align-self: center;
+}
+.char-bubble .bubble::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 24px;
+  border: 6px solid transparent;
+  border-right-width: 8px;
+}
+.char-hoshi .bubble {
+  border-color: #f0c23c;
+  background: #fff9e2;
+}
+.char-hoshi .bubble::before { border-right-color: #f0c23c; }
+.char-jiro .bubble {
+  border-color: #2a7a6c;
+  background: #e9f5f1;
+}
+.char-jiro .bubble::before { border-right-color: #2a7a6c; }
+
+/* キャラ紹介（トップ用） */
+.char-intro {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 1.2em 0;
+}
+.char-intro .char-card {
+  flex: 1 1 240px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.char-intro img { width: 72px; height: 72px; flex: none; }
+.char-intro p { margin: 0; font-size: 0.85rem; }
+.char-intro .char-title { font-weight: 700; font-size: 0.95rem; }
+
 @media (max-width: 480px) {
   body { font-size: 15px; }
   h1 { font-size: 1.3rem; }
+  .char-bubble img { width: 52px; height: 52px; }
 }
