@@ -200,6 +200,97 @@ th {
 }
 .site-footer nav a { margin-right: 14px; }
 
+/* 雑誌表紙風ヒーロー（トップ用） */
+.hero {
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 7px 7px 0 #f0c23c;
+  padding: 26px 24px 22px;
+  margin: 10px 2px 30px;
+  position: relative;
+}
+.hero-kicker {
+  display: inline-block;
+  background: #e85d2f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  padding: 4px 16px;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+}
+.hero-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.hero-chars { display: flex; gap: 4px; flex: none; }
+.hero-chars img { width: 60px; height: 60px; }
+.hero h1 {
+  font-size: 2.05rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin: 0.4em 0 0.35em;
+}
+.marker { background: linear-gradient(transparent 58%, #ffe07a 58%); }
+.hero-sub { margin: 0 0 6px; font-size: 0.95rem; }
+.stat-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 6px; }
+.stat-chip {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px 16px 7px;
+  text-align: center;
+  flex: 1 1 100px;
+}
+.stat-chip .num {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffd54f;
+}
+.stat-chip .num small { font-size: 0.8rem; font-weight: 700; }
+.stat-chip .label { font-size: 0.68rem; letter-spacing: 0.05em; }
+.genre-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 2px; }
+.genre-chip {
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  padding: 3px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #fff;
+}
+.genre-chip.active { background: #ffd54f; }
+.genre-chip.soon { border-style: dashed; border-color: var(--ink-light); color: var(--ink-light); font-weight: 400; }
+
+/* 記事カード：特集ブロック風 */
+.article-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--line);
+}
+.article-card:hover { box-shadow: 4px 4px 0 #f0c23c; border-color: var(--ink); transform: translate(-1px,-1px); }
+.card-no {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #e85d2f;
+  flex: none;
+  font-style: italic;
+}
+.work-tagline { margin-top: 2px; }
+.card-tagchip {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
 /* キャラクター吹き出し */
 .char-bubble {
   display: flex;
