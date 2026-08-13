@@ -104,6 +104,18 @@ a { color: var(--accent-dark); }
   font-size: 0.9rem;
 }
 
+/* 引用（メーカー公式などの原文引用） */
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--accent);
+  background: #f7f5ef;
+  border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0.4em 0; }
+blockquote p:first-child { margin-top: 0; }
+blockquote p:last-child { margin-bottom: 0; }
+
 /* テーブル */
 .table-wrap {
   overflow-x: auto;
