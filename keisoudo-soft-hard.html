@@ -140,6 +140,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <li>重量があるため、毎日立てかける動作が面倒という声</li>
     <li>まれに「床が変色した」という報告があるため、賃貸・新築では下に薄いシートを敷くのが安全です</li>
   </ul>
+  <p class="meta">※当サイトは商品画像を掲載していません。<strong>実物の写真・現在の価格・在庫は、Amazon側でご確認いただけます。</strong>価格は変動します。</p>
   <p><strong>硬質でおすすめの商品</strong>：国産定番のフジワラ化学 <a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B01GDT86Y8" target="_blank" rel="nofollow noopener">Amazonで見る</a>／長期使用報告のあるair-mo <a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B01BKMD1UC" target="_blank" rel="nofollow noopener">Amazonで見る</a>（詳しくは<a href="keisoudo-bathmat.html">7商品比較の記事</a>へ）</p>
 
   <h2>ソフトタイプの実態：割れない安心、ただし消耗品</h2>
@@ -202,5 +203,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p>© 2026 くらべるノート</p>
   </div>
 </footer>
+<script>
+// Amazonリンクのクリックを amazon_click として記録する（2026-08-22 設置）
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href*="amazon.co.jp"]');
+  if (!a) return;
+  var m = a.href.match(/\/dp\/([A-Z0-9]{10})/);
+  gtag('event', 'amazon_click', {
+    asin: m ? m[1] : '(none)',
+    link_url: a.href,
+    link_text: (a.textContent || '').trim().slice(0, 100),
+    page_path: location.pathname
+  });
+});
+</script>
 </body>
 </html>

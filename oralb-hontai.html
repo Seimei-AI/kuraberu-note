@@ -116,16 +116,18 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   <p>評価は当サイトが独自に設けた4軸（静かさ／電池の持ちと充電／耐久の報告／ランニングコスト）で、レビューの内容から◎○△を付けたものです。</p>
   <div class="table-wrap">
   <table>
-    <thead><tr><th>機種</th><th>価格</th><th>総合評価(件数)</th><th>★1比率</th><th>静かさ</th><th>電池・充電</th><th>耐久の報告</th><th>ランニング</th></tr></thead>
+    <thead><tr><th>機種</th><th>価格</th><th>総合評価(件数)</th><th>★1比率</th><th>静かさ</th><th>電池・充電</th><th>耐久の報告</th><th>ランニング</th><th>リンク</th></tr></thead>
     <tbody>
-      <tr><td>すみずみクリーンPROフロス</td><td>2,770円</td><td>4.0 (329)</td><td>約4.9%</td><td>－</td><td>△</td><td>△止まる報告</td><td>◎丸型</td></tr>
-      <tr><td>すみずみクリーン</td><td>4,312円</td><td>4.2 (1,595)</td><td>約1.8%</td><td>△</td><td>△持ちに不満の声</td><td>△止まる報告</td><td>◎丸型</td></tr>
-      <tr><td>PRO1S</td><td>4,980円</td><td>4.1 (891)</td><td>約3.7%</td><td>△音が大きい</td><td>△個体差大</td><td>○</td><td>◎丸型</td></tr>
-      <tr><td>iO2</td><td>9,071円</td><td>4.0 (1,999)</td><td><strong>約8.0%</strong></td><td>○静か</td><td>△半年報告多い</td><td>△</td><td>△iO専用</td></tr>
-      <tr><td>iO5</td><td>39,980円</td><td>4.2 (742)</td><td>約3.8%</td><td>◎</td><td>△充電が遅い</td><td>△1年前後の報告</td><td>△iO専用</td></tr>
+      <tr><td>すみずみクリーンPROフロス</td><td>2,770円</td><td>4.0 (329)</td><td>約4.9%</td><td>－</td><td>△</td><td>△止まる報告</td><td>◎丸型</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0CD3R6VS3" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+      <tr><td>すみずみクリーン</td><td>4,312円</td><td>4.2 (1,595)</td><td>約1.8%</td><td>△</td><td>△持ちに不満の声</td><td>△止まる報告</td><td>◎丸型</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B086L4GRJM" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+      <tr><td>PRO1S</td><td>4,980円</td><td>4.1 (891)</td><td>約3.7%</td><td>△音が大きい</td><td>△個体差大</td><td>○</td><td>◎丸型</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0CWZJGVW6" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+      <tr><td>iO2</td><td>9,071円</td><td>4.0 (1,999)</td><td><strong>約8.0%</strong></td><td>○静か</td><td>△半年報告多い</td><td>△</td><td>△iO専用</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0DB48CFG7" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+      <tr><td>iO5</td><td>39,980円</td><td>4.2 (742)</td><td>約3.8%</td><td>◎</td><td>△充電が遅い</td><td>△1年前後の報告</td><td>△iO専用</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0BDG1VPN7" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
     </tbody>
   </table>
   </div>
+  <p class="meta">※当サイトは商品画像を掲載していません。<strong>実物の写真・現在の価格・在庫は、Amazon側でご確認いただけます。</strong>価格は変動します。</p>
+
   <p class="meta">※価格・評価は2026年8月15日時点。変動します。<br>※★1比率＝★1の件数 ÷ 総レビュー件数。<strong>5機種で最も評価が割れているのはiO2</strong>（★5が336件ある一方で★1が159件）。<br>※★1比率は機種ごとの販売期間・レビュー総数が違うため、目安としてご覧ください。比率が低いことは不具合報告がないことを意味しません。</p>
 
   <h2>5. 機種ごとの評価</h2>
@@ -256,5 +258,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p>© 2026 くらべるノート</p>
   </div>
 </footer>
+<script>
+// Amazonリンクのクリックを amazon_click として記録する（2026-08-22 設置）
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href*="amazon.co.jp"]');
+  if (!a) return;
+  var m = a.href.match(/\/dp\/([A-Z0-9]{10})/);
+  gtag('event', 'amazon_click', {
+    asin: m ? m[1] : '(none)',
+    link_url: a.href,
+    link_text: (a.textContent || '').trim().slice(0, 100),
+    page_path: location.pathname
+  });
+});
+</script>
 </body>
 </html>

@@ -118,14 +118,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   <h2>4. 5種類の比較表</h2>
   <div class="table-wrap">
   <table>
-    <tr><th>種類</th><th>代表価格</th><th>1本あたり</th><th>評価(件数)</th><th>流通系統</th><th>レビューで目立った声</th></tr>
-    <tr><td><strong>マルチアクション</strong> EB50</td><td>3,980円(8本)</td><td>約498円</td><td>4.4 (2,474)</td><td>簡易包装</td><td>「純正はやはり違う」／「ドイツ製の正規品だった」</td></tr>
-    <tr><td><strong>ベーシック</strong> EB20</td><td>2,180円(4本)</td><td>545円</td><td>4.3 (3,732)</td><td>簡易包装</td><td>「コスパ最強」／「極細から替えると少し硬い」（★1・1件）</td></tr>
-    <tr><td><strong>やわらか極細毛</strong> EB60</td><td>2,480円(4本)</td><td>620円</td><td>4.3 (6,304)</td><td>表示なし</td><td>「当たりがソフト」／箱が写真と違う（★1・3件）</td></tr>
-    <tr><td><strong>歯間ワイパー付</strong> EB25</td><td>2,480円(4本)</td><td>620円</td><td>4.3 (7,193)</td><td>並行輸入品</td><td>「並行輸入だが問題なく使えた」／「毛が抜けた」（★1・3件）</td></tr>
-    <tr><td><strong>ホワイトニング</strong> EB18</td><td>2,380円(4本)</td><td>595円</td><td>4.2 (3,089)</td><td>並行輸入品</td><td>「パッケージの違いだけ」／「ゴムの部分がボロボロ」（★1・5件中2件が品質の指摘）</td></tr>
+    <tr><th>種類</th><th>代表価格</th><th>1本あたり</th><th>評価(件数)</th><th>流通系統</th><th>レビューで目立った声</th><th>リンク</th></tr>
+    <tr><td><strong>マルチアクション</strong> EB50</td><td>3,980円(8本)</td><td>約498円</td><td>4.4 (2,474)</td><td>簡易包装</td><td>「純正はやはり違う」／「ドイツ製の正規品だった」</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B097K8V5TK" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td><strong>ベーシック</strong> EB20</td><td>2,180円(4本)</td><td>545円</td><td>4.3 (3,732)</td><td>簡易包装</td><td>「コスパ最強」／「極細から替えると少し硬い」（★1・1件）</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0C1H1D3Y1" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td><strong>やわらか極細毛</strong> EB60</td><td>2,480円(4本)</td><td>620円</td><td>4.3 (6,304)</td><td>表示なし</td><td>「当たりがソフト」／箱が写真と違う（★1・3件）</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B07DGJDGW9" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td><strong>歯間ワイパー付</strong> EB25</td><td>2,480円(4本)</td><td>620円</td><td>4.3 (7,193)</td><td>並行輸入品</td><td>「並行輸入だが問題なく使えた」／「毛が抜けた」（★1・3件）</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B004CRSKHM" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td><strong>ホワイトニング</strong> EB18</td><td>2,380円(4本)</td><td>595円</td><td>4.2 (3,089)</td><td>並行輸入品</td><td>「パッケージの違いだけ」／「ゴムの部分がボロボロ」（★1・5件中2件が品質の指摘）</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B018LT0LRS" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
   </table>
   </div>
+  <p class="meta">※当サイトは商品画像を掲載していません。<strong>実物の写真・現在の価格・在庫は、Amazon側でご確認いただけます。</strong>価格は変動します。</p>
+
   <p class="meta">※価格・評価は2026年8月21日時点。変動します。1本あたりは代表パッケージでの単純割り算です。件数を添えた声は、当サイトが確認できた日本語レビューの件数です。<strong>頻度を示すものではありません。</strong></p>
 
   <h2>5. 種類ごとの評価</h2>
@@ -264,5 +266,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p>© 2026 くらべるノート</p>
   </div>
 </footer>
+<script>
+// Amazonリンクのクリックを amazon_click として記録する（2026-08-22 設置）
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href*="amazon.co.jp"]');
+  if (!a) return;
+  var m = a.href.match(/\/dp\/([A-Z0-9]{10})/);
+  gtag('event', 'amazon_click', {
+    asin: m ? m[1] : '(none)',
+    link_url: a.href,
+    link_text: (a.textContent || '').trim().slice(0, 100),
+    page_path: location.pathname
+  });
+});
+</script>
 </body>
 </html>

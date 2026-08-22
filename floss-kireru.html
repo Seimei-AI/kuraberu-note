@@ -131,13 +131,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   <h2>4. 4系統の比較表</h2>
   <div class="table-wrap">
   <table>
-    <tr><th>系統</th><th>代表商品</th><th>価格</th><th>1回あたり</th><th>★1で目立った声</th><th>★5で目立った声</th></tr>
-    <tr><td>糸巻き・多繊維</td><td>フロアフロス 250m</td><td>3,760円</td><td>約6.0円</td><td>「糸が出ない」「ケースが割れて届いた」</td><td>「汚れの落ち具合、使い勝手が良い」</td></tr>
-    <tr><td>糸巻き・ふくらむ</td><td>GUM ふくらむタイプ 120m</td><td>1,980円</td><td>約6.6円</td><td>「繊維が挟まり、大惨事」（★1・6人が評価）</td><td>「汚れもしっかり絡め取ってくれる」（★5・3人）</td></tr>
-    <tr><td>Y字ホルダー</td><td>クリニカ アドバンテージ Y字 90本</td><td>1,227円</td><td>約13.6円</td><td>「糸が太いのか隙間に入らず、ひっかかって抜けません」</td><td>「フロス自体が細めなので歯間にすんなり入り」（★5・3人）</td></tr>
-    <tr><td>糸ようじ</td><td>小林製薬の糸ようじ 60本</td><td>599円</td><td>約10.0円</td><td>「6本に比べてピンと張ってない」（★1・7人が評価）</td><td>「糸が切れることが殆どなくなりました」</td></tr>
+    <tr><th>系統</th><th>代表商品</th><th>価格</th><th>1回あたり</th><th>★1で目立った声</th><th>★5で目立った声</th><th>リンク</th></tr>
+    <tr><td>糸巻き・多繊維</td><td>フロアフロス 250m</td><td>3,760円</td><td>約6.0円</td><td>「糸が出ない」「ケースが割れて届いた」</td><td>「汚れの落ち具合、使い勝手が良い」</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0DCTL2ND9" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td>糸巻き・ふくらむ</td><td>GUM ふくらむタイプ 120m</td><td>1,980円</td><td>約6.6円</td><td>「繊維が挟まり、大惨事」（★1・6人が評価）</td><td>「汚れもしっかり絡め取ってくれる」（★5・3人）</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B07B56K67P" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td>Y字ホルダー</td><td>クリニカ アドバンテージ Y字 90本</td><td>1,227円</td><td>約13.6円</td><td>「糸が太いのか隙間に入らず、ひっかかって抜けません」</td><td>「フロス自体が細めなので歯間にすんなり入り」（★5・3人）</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B07TP1QDM7" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
+    <tr><td>糸ようじ</td><td>小林製薬の糸ようじ 60本</td><td>599円</td><td>約10.0円</td><td>「6本に比べてピンと張ってない」（★1・7人が評価）</td><td>「糸が切れることが殆どなくなりました」</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B01FQCA29K" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
   </table>
   </div>
+  <p class="meta">※当サイトは商品画像を掲載していません。<strong>実物の写真・現在の価格・在庫は、Amazon側でご確認いただけます。</strong>価格は変動します。</p>
+
   <p class="meta">※価格・1回あたりは2026年8月21日時点。1回あたりは当サイトの単純計算で、基準2のとおり前提があります。声はいずれも当サイトが確認できた日本語レビューからで、<strong>頻度を示すものではありません</strong>。<br>※★5については、GUM・クリニカY字・糸ようじは★5に絞って読みましたが、<strong>フロアフロスだけは商品ページのトップレビューから読んでおり、取得範囲が異なります</strong>。</p>
 
   <h2>5. 系統ごとの評価</h2>
@@ -282,5 +284,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p>© 2026 くらべるノート</p>
   </div>
 </footer>
+<script>
+// Amazonリンクのクリックを amazon_click として記録する（2026-08-22 設置）
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href*="amazon.co.jp"]');
+  if (!a) return;
+  var m = a.href.match(/\/dp\/([A-Z0-9]{10})/);
+  gtag('event', 'amazon_click', {
+    asin: m ? m[1] : '(none)',
+    link_url: a.href,
+    link_text: (a.textContent || '').trim().slice(0, 100),
+    page_path: location.pathname
+  });
+});
+</script>
 </body>
 </html>

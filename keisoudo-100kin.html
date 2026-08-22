@@ -124,6 +124,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <li><strong>長く使う前提で、質感と見た目にも払える</strong>：soilなど、検査情報を公開しているブランド</li>
     <li><strong>割れが心配</strong>：価格帯より先に、丸洗いできるソフトタイプの検討を → <a href="keisoudo-soft-hard.html">ソフトvs硬質の記事へ</a></li>
   </ul>
+  <p class="meta">※当サイトは商品画像を掲載していません。<strong>実物の写真・現在の価格・在庫は、Amazon側でご確認いただけます。</strong>価格は変動します。</p>
   <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B008FWK1X6" target="_blank" rel="nofollow noopener">soil バスマットライトをAmazonで見る</a>
   <p class="meta">※Amazonでの実売価格は変動し、メーカー希望小売価格の9,900円を下回っていることもあります（当サイト確認時は8,000円台）。購入時に最新価格をご確認ください。</p>
 
@@ -148,5 +149,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p>© 2026 くらべるノート</p>
   </div>
 </footer>
+<script>
+// Amazonリンクのクリックを amazon_click として記録する（2026-08-22 設置）
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href*="amazon.co.jp"]');
+  if (!a) return;
+  var m = a.href.match(/\/dp\/([A-Z0-9]{10})/);
+  gtag('event', 'amazon_click', {
+    asin: m ? m[1] : '(none)',
+    link_url: a.href,
+    link_text: (a.textContent || '').trim().slice(0, 100),
+    page_path: location.pathname
+  });
+});
+</script>
 </body>
 </html>

@@ -129,6 +129,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
       <tr><td>王様のバスマット</td><td>ソフト</td><td>約2,600円</td><td>3.8 (4,567)</td><td>△評価が割れる</td><td>△1年未満の劣化報告</td><td>◎厚み5mm</td><td>○洗濯機は注意</td><td><a class="amazon-btn-small" href="https://www.amazon.co.jp/dp/B0C3YWMG1J" target="_blank" rel="nofollow noopener">Amazonで見る</a></td></tr>
     </table>
   </div>
+  <p class="meta">※当サイトは商品画像を掲載していません。<strong>実物の写真・現在の価格・在庫は、Amazon側でご確認いただけます。</strong>価格は変動します。</p>
+
   <p class="meta">※価格・評価は2026年8月時点。変動します。</p>
 
   <h3>星の内訳データ（当サイト調べ）</h3>
@@ -272,5 +274,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p>© 2026 くらべるノート</p>
   </div>
 </footer>
+<script>
+// Amazonリンクのクリックを amazon_click として記録する（2026-08-22 設置）
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href*="amazon.co.jp"]');
+  if (!a) return;
+  var m = a.href.match(/\/dp\/([A-Z0-9]{10})/);
+  gtag('event', 'amazon_click', {
+    asin: m ? m[1] : '(none)',
+    link_url: a.href,
+    link_text: (a.textContent || '').trim().slice(0, 100),
+    page_path: location.pathname
+  });
+});
+</script>
 </body>
 </html>
